@@ -64,14 +64,21 @@ public class Main
                                             String[] array_of_s = s.split("=");
                                             if( array_of_s.length == 2 )
                                              if( array_of_s[0].length()>0 && array_of_s[1].length()>0 )
+                                               try
                                                {
+                                                Double d = Double.parseDouble(array_of_s[1]);
+
                                                 array_of_s[0] = array_of_s[0].trim();
 
                                                 System.out.println( String.format(
                                                     ANSI_BLUE+ "товар \"%s\" добавлен ( итого: %.2f руб.)",
                                                     array_of_s[0],
 
-                                                    calculator.add_item( array_of_s[0], Double.parseDouble(array_of_s[1]) )));
+                                                    calculator.add_item( array_of_s[0], d )));
+                                               }
+                                               catch( NumberFormatException e )
+                                               {
+                                                   System.out.println( ANSI_RED+ "Ошибка в стоимости товара!" );
                                                }
                                          }
         }
