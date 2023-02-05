@@ -90,10 +90,10 @@ public class Main
 
         Double  d = Math.floor( calculator.get_cost_per_account() );
         Integer n = d.intValue();
-        if( 5 <=    n && n    <= 20 ) System.out.println("ей"); else
-        if(              n%10 ==  1 ) System.out.println("ь" ); else
-        if( 2 <= n%10 && n%10 <=  4 ) System.out.println("я" ); else
-                                      System.out.println("ей");
+        if( 5 <= n%100 && n%100 <= 20 ) System.out.println("ей"); else
+        if(               n%10  ==  1 ) System.out.println("ь" ); else
+        if( 2 <=  n%10 && n%10  <=  4 ) System.out.println("я" ); else
+                                        System.out.println("ей");
 
         System.out.println( ANSI_PURPLE+ "------------------------------------------------");
     }
