@@ -1,24 +1,20 @@
 public class High_Load_Calculator
 {
+    private int    accounts   = 0   ;
+    private double total_cost = 0.0 ;
 
-    private Integer accounts   = 0   ;
-    private Double  total_cost = 0.0 ;
-    private String  items      = ""  ;
+    private StringBuilder items = new StringBuilder();
 
+    High_Load_Calculator( int n ){ accounts = n; }
 
-
-    High_Load_Calculator( Integer n ){ accounts = n; }
-
-
-
-    public Double add_item( String item, Double cost )
+    public double add_item( String item, double cost )
     {
-        items      += item + "\n" ;
-        total_cost += cost        ;
+        items.append(item).append("\n");
+        total_cost += cost;
 
         return total_cost;
     }
 
-    public String get_items_string     (){ return items;                 }
-    public Double get_cost_per_account (){ return total_cost / accounts; }
+    public String get_items_string     (){ return items.toString();      }
+    public double get_cost_per_account (){ return total_cost / accounts; }
 }
